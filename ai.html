@@ -1,91 +1,638 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>나의 포트폴리오</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+    <title>EA SPORTS FC ONLINE</title>
+    <meta name="viewport" content="width=1280" />
+    <meta name="robots" content="index,follow" />
+    <meta name="description" content="EA SPORTS FC ONLINE - NEXON Korea" />
+    <meta name="author" content="NEXON Korea" />
+    <meta name="keywords" content="NEXON, 넥슨, NEXON Korea, 넥슨코리아, FC ONLINE, FC온라인, FC, EA, EA Sports, 스포츠" />
+    <meta name="facebook-domain-verification" content="z0m6hx4nc4jl56dvkladb2vlp88j9l" />
+    <link rel="shortcut Icon" href="https://ssl.nexon.com/s2/game/fc/online/common/fc_favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="https://ssl.nexon.com/s2/game/fc/online/common/fc_favicon.ico" type="image/x-icon" />
+    <script type="text/javascript" src="https://ssl.nexon.com/s1/global/ngb_head.js"></script>
+    <script type="text/javascript" src="https://ssl.nexon.com/s1/p2/ps.min.js" charset="utf-8" data-name="PS" data-ngm="true" data-nxlogin="true"></script>
+    <script src="https://ssl.nexon.com/s1/fc/online/common/ga.js"></script>
+    <script src="https://ssl.nexon.com/s1/fc/online/common/gtm.js"></script>
+    <script src="https://ssl.nexon.com/s1/fc/online/library/jquery.min.js"></script>
+    <script src="https://ssl.nexon.com/s1/fc/online/library/TweenMax.min.js"></script>
+    <script src="https://ssl.nexon.com/s1/fc/online/plugin/jquery.easing.min.js"></script>
+    <script src="https://ssl.nexon.com/s1/fc/online/plugin/sly.min.js"></script>
+    <!--[if lte IE 10]>
+    <script>location.href = "http://fconline.nexon.com/common/ie9"</script>
+    <![endif]-->
+
+    <script src="https://ssl.nexon.com/s1/fc/online/obt/fObject.min.js"></script>
+    <script src="https://ssl.nexon.com/s1/fc/online/shop/shop.min.js"></script>
+    <script src="/js/moment.js"></script>
+    <link rel="stylesheet" href="https://ssl.nexon.com/s3/fc/online/shop/shop_ssl.css?t=2025-05-24 12:27" media="all" />
+    
+	<meta name="viewport" content="width=1600" />
+	<style>
+		#loader { background:#000; }
+	</style>
+
+    
+    
 </head>
 <body>
-  <header>
-    <h1>한태영</h1>
-    <nav>
-      <ul>
-        <li><a href="#about">중3입니다.</a></li>
-        <li><a href="#projects">주식 하고 싶다</a></li>
-        <li><a href="#contact">010</a></li>
-      </ul>
-    </nav>
-  </header>
+    <input type="hidden" id="domain" value="https://shop.fconline.nexon.com" />
+    <input type="hidden" id="SiteType" value="1" />
+    <div id="wrapper">
+        <div id="loader"></div>
+        <!-- 공통 HEADER -->
+        <header id="header">
+            
+<section class="gnb">
+    <div class="inner">
+        <h1 class="fo4"><a href="https://fconline.nexon.com/main/index">EA SPORTS FC ONLINE</a></h1>
+        <h2 class="shop"><a href="/">WEB SHOP</a></h2>
+        <nav class="navigation">
+            <ul>
 
-  <section id="about">
-    <h2>소개</h2>
-    <p>안녕하세요! 저는 프론트엔드 개발자 홍길동입니다. 창의적인 UI/UX와 반응형 웹에 관심이 많습니다.</p>
-  </section>
-
-  <section id="projects">
-    <h2>프로젝트</h2>
-    <ul>
-      <li><strong>포트폴리오 사이트:</strong> HTML, CSS, JavaScript로 제작</li>
-      <li><strong>Todo 앱:</strong> React를 활용한 작업 목록 앱</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2>연락처</h2>
-    <p>이메일: hong@example.com</p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
-  </section>
-
-  <section id="skills">
-    <h2>기술 스택</h2>
-    <div class="charts">
-      <!-- 차트 크기를 줄이기 위해 width와 height 값을 수정 -->
-      <canvas id="htmlChart" width="70" height="70"></canvas>
-      
+                <li ><a href="/" data-weblog-object="gnb-navi-01">웹 상점</a></li>
+                    <li ><a href="/Membership" data-weblog-object="gnb-navi-02">멤버십</a></li>
+                <li   class='active'   ><a href="https://shop.fconline.nexon.com/ShopEvent/Index" data-weblog-object="gnb-navi-02">스페셜 상점</a></li>
+            </ul>
+        </nav>
+        <aside class="aside">
+                <a href="/mypage" class="bt-my">마이페이지</a>
+                <button type="button" class="bt-header-logout NaviLogout">로그아웃</button>
+            <button type="button" class="bt-gamestart">게임시작</button>
+        </aside>
     </div>
-  </section>
+</section>
+<section class="user" id="membership_user">
 
-  <footer>
-    <p>&copy; 2025 홍길동. 모든 권리 보유.</p>
-  </footer>
+    <div class="inner">
 
-  <script>
-    // 각 차트 그리기
-    function drawChart(id, data, colors, cutout) {
-      const ctx = document.getElementById(id).getContext('2d');
-      new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          labels: ['HTML', 'CSS', 'JavaScript'],
-          datasets: [{
-            label: '기술 스택',
-            data: data,
-            backgroundColor: colors,
-          }]
-        },
-        options: {
-          responsive: true,
-          cutout: cutout,  // 중앙 비율 조정 (차트의 크기 조정)
-          plugins: {
-            legend: { display: false },  // 범례 숨기기
-            tooltip: { 
-              callbacks: {
-                label: function(context) {
-                  return `${context.label}: ${context.raw}%`;
-                }
-              }
-            }
-          }
+            <div class="login after">
+                <div class="membership new" id="membership_grade"></div>
+                    <p class="nickname"><strong>Lv.50</strong> situate</p>
+                <div class="regular-sale">
+                    <a href="https://shop.fconline.nexon.com/#tab=1" id="navi-fcbuy-btn">FC 구매</a>
+                    <a href="#" onclick="GetCashChargePop(); return false;">캐시충전</a>
+                    <a href="https://shop.fconline.nexon.com/Coupon" class="">보유쿠폰<strong>0</strong></a>
+                </div>
+            </div>
+        <ul class="asset _01">
+            <li class="fc">
+                <p id="header-fc">273 FC</p>
+                <div class="tooltip">
+                    <strong>?</strong>
+                    <p>FC CASH.<br>FC 온라인 에서만<br>사용 가능한 캐시입니다.</p>
+                </div>
+            </li>
+            <li class="mc">
+                <p id="header-mc">0 MC</p>
+                <div class="tooltip">
+                    <strong>?</strong>
+                    <p>MOBILE CASH.<br />FC 온라인 M 에서만<br />사용 가능한 캐시입니다.</p>
+                </div>
+            </li>
+            <li class="mp">
+                <p id="header-mp">20,046 MP</p>
+                <div class="tooltip">
+                    <strong>?</strong>
+                    <p>넥슨캐시 및 FC, MC로 판매하는 상품 구매 시 적립됩니다.<br>(단, FC, MC 충전 금액은 제외)</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="asset _02">
+            <li class="cash">
+                <p><text id="header-cash">100</text> CASH</p>
+                <div class="tooltip">
+                    <strong>?</strong>
+                    <p>넥슨에서 서비스하는 유료 컨텐츠만을 이용하기 위해 회원이 구매하는 인터넷상의 결제수단입니다.</p>
+                </div>
+            </li>
+            <li class="ec">
+                <p>10,000 EC</p>
+                <div class="tooltip">
+                    <strong>?</strong>
+                    <p>FC 온라인 내 EC 상점에서 사용 가능하며 에이전트 및 이벤트를 통해 획득 가능합니다.</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="sub-menu">
+    <!-- 기본적으로 가려져 있음, 활성 필요 시 $fnSubmenu() 호출 -->
+    <div class="inner">
+        <ul>
+                <li   class='active'   ><a href="https://shop.fconline.nexon.com/Events/250430/SevenHitsLucky">7주년 치트키! SSS 행운 상점</a></li>
+                <li ><a href="https://shop.fconline.nexon.com/Events/250313/ShootingMarble">슈팅 마블</a></li>
+                <li ><a href="https://shop.fconline.nexon.com/Events/250220/TicketShop">내 맘대로 TICKET SHOP</a></li>
+        </ul>
+    </div>
+</section>
+<section class="user-fixed"  id="membership_user_fixed">
+    <div class="inner">
+        <h2 class="shop"><a href="/">WEB SHOP</a></h2>
+            <div class="login after">
+                    <!-- 유저 정보 추가 -->
+                    <div class="membership gold" id="membership_grade2"></div>
+                    <p class="nickname"><strong>Lv.50</strong> situate<a href="https://shop.fconline.nexon.com/Coupon" class="">보유쿠폰<strong>0</strong></a></p>
+
+            </div>
+            <ul class="asset">
+                <li class="fc">
+                    <p id="header-fc2">273 FC</p>
+                </li>
+                <li class="mc">
+                    <p id="header-mc2">0 MC</p>
+                </li>
+                <li class="mp">
+                    <p id="header-mp2">20,046 MP</p>
+                </li>
+                <li class="cash">
+                    <p id="header-cash2">100 CASH</p>
+                </li>
+                <li class="ec">
+                    <p id="header-ec2">10,000 EC</p>
+                </li>
+            </ul>
+
+    </div>
+</section>
+    <!-- 전체 공지 -->
+    <section class="notice-banner">
+        <div class="inner">
+            <p>* [멤버십] 5,000 (+400) FC (특별 할인) + [전반] 또는 [후반] 7주년 페스타 열쇠 1개 상품을 구매하셨다면 <br> [멤버십] 5,000 (+400) FC (특별 할인) 상품의 구매는 불가합니다. </p>
+                <a href="https://shop.fconline.nexon.com/Membership" target="_blank">자세히 보기<span>▶</span></a>
+        </div>
+    </section>
+    <!-- //전체 공지 -->
+<script type="text/javascript">
+
+    $(function () {
+        $(".NaviLogin").on("click", Navi.Login).css("cursor", "pointer");
+        $(".NaviLogout").on("click", Navi.Logout);
+        $(".bt-gamestart").on("click", Navi.GameStart);
+
+        var special = "special1";
+
+        if (special.indexOf("special") > -1) {
+            $fnSubmenu();
         }
-      });
+    });
+
+    var Navi = {
+        Login: function (e) {
+            top.PS.nxlogin.showLoginLayer();
+            if (e != null) e.preventDefault();
+        },
+        Logout: function (e) {
+            NgbLogin.Logout();
+            if (e != null) e.preventDefault();
+        },
+        GameStart: function () {
+            GnxGameStartOnClick(106566);
+        }
+    }
+    function GnxGameStartOnClick(argument) {
+                    
+                    if (argument == null) { argument = 106566; }
+
+                    $.get("/pcbang", { rd: Math.random() }, function (data) {
+                        var param = data;
+                        PS.game.startGame({ gameCode: argument, param: "pcbang=" + param });
+                        $h.a2s.sendClickLog('GAMESTART', null);
+                    });
+                    
     }
 
-    // HTML, CSS, JS 차트에 대한 데이터와 색상
-    drawChart('htmlChart', [70, 20, 10], ['#FF6384', '#36A2EB', '#FFCE56'], '80%'); // HTML 차트
-    
-  </script>
+    var cashChargPopup = null;
+    var cashChargUrl = "";
+    function GetCashChargePop() {
+        shopui.fn.layerPopup('close');
+                    
+         if (!cashChargPopup || cashChargPopup.closed) {
+             $.getJSON("/cash/GetCashChargeUrl", { rd: Math.random() }, function (data) {
+                 if (data.retCode == 1) {
+                     cashChargUrl = data.url;
+                     if (!cashChargPopup || cashChargPopup.closed) {
+                         //myWin = $f.popup(data.url, 'myWin', 840, 620);
+                         cashChargPopup = window.open(cashChargUrl, "cashcargepoup", 840, 620);
+                     }
+                 }
+                 else if (data.retCode == -1) {
+                     top.PS.nxlogin.showLoginLayer();
+                 }
+             });
+         }
+         else {
+             cashChargPopup.location = cashChargUrl;
+             cashChargPopup.focus();
+         }
+
+
+                    
+            }
+
+</script>
+
+
+        </header>
+        <!-- //공통 HEADER -->
+        <!-- MAIN -->
+        
+
+
+<script>
+</script>
+
+<input name="__RequestVerificationToken" type="hidden" value="ZXgD8zyrB4JM2nTB9VZYUSR8HZu-_8TM3i2bDFvyVpLZ1PWcbsFRdTdSyOBQ_beZfxaUP34Z8nT7mUbiCxQD_onMy_41" />
+
+<div id="root">
+</div>
+
+
+        <!-- //MAIN -->
+<aside id="information">
+    <div class="inner">
+        <ul>
+            <li><a href="http://fconline.nexon.com/datacenter" target="_blank">전체 클래스 정보</a></li>
+            <li><a href="#none" onclick="shopui.fn.layerPopup('notice'); return false;">구매 유의 사항 / 청약 철회 안내</a></li>
+            <li><a href="http://iteminfo.nexon.com/probability/fco" target="_blank">아이템 전체 확률 정보</a></li>
+        </ul>
+        <p>※ 확률형 아이템 자율 규제안에 따라 아이템 확률을 공개합니다. <span class="tooltip"><strong>?</strong><span class="hidden">확률형 아이템 자율 규제란?</span></span></p>
+    </div>
+</aside>
+
+
+<footer id="footer" role="contentinfo">
+    <div class="inner">
+        <a href="http://fconline.nexon.com"><h2 class="logo">EA SPORTS FC ONLINE</h2></a>
+        <nav class="nav">
+            <ul>
+                <li><a href="http://company.nexon.com/" target="_blank" title="새창">회사소개</a></li>
+                <li><a href="https://careers.nexon.com/" target="_blank" title="새창">채용안내</a></li>
+                <li><a href="https://member.nexon.com/policy/stipulation.aspx" target="_blank">이용약관</a></li>
+                <li><a href="#none" title="새창" onclick="$f.popup('http://fconline.nexon.com/Content/common/gameuser.html', 500, 440); return false;">게임이용등급안내</a></li>
+                <li><a href="https://member.nexon.com/policy/privacy.aspx" target="_blank" title="새창">개인정보처리방침</a></li>
+                <li><a href="https://member.nexon.com/policy/youthprotection.aspx" target="_blank" title="새창">청소년보호정책</a></li>
+                <li><a href="http://pcbang.nexon.com/" target="_blank" title="새창">넥슨PC방</a></li>
+                <li><a href="#none" title="새창" onclick="$f.popup('http://fconline.nexon.com/Content/common/rule_operation.html', 800, 800); return false;">운영정책</a></li>
+            </ul>
+        </nav>
+        <address>
+            <p>(주)넥슨코리아 대표이사 강대현·김정욱 경기도 성남시 분당구 판교로 256번길 7 전화 : 1588-7701 팩스 : 0502-258-8322</p>
+            <p> E-mail : contact-us@nexon.co.kr 사업자등록번호 : 220-87-17483호 통신판매업 신고번호 : 제2013-경기성남-1659호 <a href="http://www.ftc.go.kr/info/bizinfo/communicationViewPopup.jsp?wrkr_no=2208717483" target="_blank" title="새창">사업자정보확인</a></p>
+        </address>
+        <p class="nx-copyright">ⓒ NEXON Korea Corporation All Rights Reserved.</p>
+        <p class="copyright">ⓒ 2025 Electronic Arts Inc. Electronic Arts, EA, EA SPORTS, the EA SPORTS logo, EA SPORTS FC, and the EA SPORTS FC logo are trademarks of Electronic Arts Inc. Manufactured under license by Electronic Arts.
+The word(s) UEFA, CHAMPIONS LEAGUE, WOMEN’S CHAMPIONS LEAGUE, EUROPA LEAGUE, EUROPA CONFERENCE LEAGUE, SUPER CUP, the UEFA logo and all marks related to the UEFA Champions League,
+UEFA Women’s Champions League, UEFA Europa League, UEFA Europa Conference League and UEFA Super Cup (including, but not limited to, logos, designs, mascots, products, trophies and names)
+are owned and protected as registered trademarks, designs and/or as copyright works by UEFA. All rights reserved.</p>
+        <div class="company">
+            <h2>관련사 링크</h2>
+            <a href="http://www.nexon.com/" target="_blank" class="bt-nexon">넥슨 코리아</a>
+            <a href="http://www.easports.com/" target="_blank" class="bt-ea">EA SPORTS</a>
+        </div>
+    </div>
+</footer>        <!-- //공통 FOOTER -->
+        <!-- 공통 LAYER POPUP -->
+        
+
+<!-- 최근 본 상품 (2022 개편) -->
+<div class="my-history" style="display:none;">
+</div>
+<!-- 공통 메시지 LAYER POPUP -->
+<div class="layer-popup message">
+    <div class="content">
+        <div class="header">
+            <h4 class="title">좋아요 마일리지 지급</h4>
+            <button type="button" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-close">닫기</button>
+        </div>
+        <div class="middle">
+            <p class="product">
+                %%구단주%%님이<br />
+                %%상품명%% 상품을<br />
+                좋아합니다.
+                <strong>[10마일리지가 지급되었습니다.]</strong>
+            </p>
+            <div class="button">
+                <a href="#none" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-confirm">확인</a>
+            </div>
+        </div>
+    </div>
+    <div class="dimmed"></div>
+</div>
+<!-- //공통 메시지 LAYER POPUP -->
+<div class="layer-popup basket" id="popup-basket">
+    <!-- 장바구니 담기 -->
+    <div class="content">
+        <div class="header">
+            <h4 class="title">장바구니 담기</h4>
+            <button type="button" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-close">닫기</button>
+        </div>
+        <div class="middle">
+            <p class="product">
+            </p>
+            <p class="text">선택하신 상품이 장바구니에 담겼습니다.<br />장바구니로 이동하시겠습니까?</p>
+            <dd class="button">
+                <a href="#" class="bt-shopping" onclick="shopui.fn.layerPopup('close'); return false;">쇼핑 계속하기</a>
+                <a href="/Events/250430/Carts?controller=Mypage" class="bt-basket">장바구니 가기</a>
+            </dd>
+        </div>
+    </div>
+    <div class="dimmed"></div>
+</div>
+<div class="layer-popup confirm" style="opacity: 1;">
+    <!-- 구매 확정 -->
+    <div class="content">
+        <div class="header">
+            <h4 class="title">구매확정</h4>
+            <button type="button" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-close">닫기</button>
+        </div>
+        <div class="middle">
+            <p class="text">구매 확정 후 청약철회가 불가능 합니다.<br>구매 확정 하시겠습니까?</p>
+            <dd class="button">
+                <a href="#none" class="bt-confirm">확인</a>
+                <a href="#none" class="bt-cancel">취소</a>
+            </dd>
+        </div>
+    </div>
+    <div class="dimmed"></div>
+</div>
+<div class="layer-popup topclass">
+    <div class="content">
+        <div class="header">
+            <h4 class="title"><a href="#none">EA SPORTS FC ONLINE - WEB SHOP</a></h4>
+            <button type="button" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-close">닫기</button>
+        </div>
+        <div class="middle">
+            <h6 class="hidden">TOP CLASS 혜택을 구매해보세요!</h6>
+            <img src="https://ssl.nexon.com/s2/game/fo4/shop/img_topclass.png" alt="" />
+        </div>
+    </div>
+    <div class="dimmed"></div>
+</div>
+<!-- 공통 LAYER POPUP : 구매 유의사항/ 청약철회 안내 -->
+<div class="layer-popup notice">
+    <div class="content">
+        <div class="header">
+            <h4 class="title"><a href="#none">EA SPORTS FC ONLINE - WEB SHOP</a></h4>
+            <button type="button" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-close">닫기</button>
+        </div>
+        <div class="middle">
+            <div class="text-body">
+                <h6 class="title">구매 유의사항 / 청약철회 안내</h6>
+                <p>
+                    1. 청약철회는 청약철회 가능 상품에 한해 구입 후 7일 이내에만 가능합니다.<br />
+                    2. 청약철회는 아래와 같은 경우, 진행이 불가합니다.<br />
+                    (상품 선물/ 보관함 '구매 확정' / 청약철회가 불가한 상품/ 상품 구입 후 7일이 지난 경우)<br />
+                    3. 마일리지는 6개월 단위로 초기화 되므로 사용에 유의해주시길 바랍니다. (6월 30일, 12월 31일)<br />
+                    4. 지명 선수팩은 각 아이템 별 선수 숫자에 맞게 자동으로 지정되어 있으며, 원하는 선수를 추가 및 제거할 수 있습니다.<br />
+                    5. 확률 정보는 웹 상점 하단에 있는 ‘아이템 전체 확률 정보’ 에서 확인하실 수 있습니다.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="dimmed"></div>
+</div>
+<!-- //공통 LAYER POPUP : 구매 유의사항/ 청약철회 안내 -->
+<!-- LAYER POPUP : 생일 특별 상품 20190408 -->
+<div class="layer-popup birthday-product">
+    <div class="content">
+        <div class="header">
+            <h4 class="title"><a href="#none">EA SPORTS FC ONLINE - WEB SHOP</a></h4>
+            <button type="button" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-close">닫기</button>
+        </div>
+        <div class="middle">
+            <!-- 생일 특별 상품 -->
+            <div class="product">
+                <h6>생일 특별 상품은<br />2종 중 1개만 구매 가능합니다.</h6>
+                <p>아래 상품을 구매 하시겠습니까?</p>
+                <div class="item">
+                    <span class="item-info">
+                    </span>
+                </div>
+                <div class="button">
+                    <a href="#none" class="bt-confirm" onclick="return false;">확인</a>
+                </div>
+            </div><!-- //생일 특별 상품 -->
+        </div>
+    </div>
+    <div class="dimmed"></div>
+</div>
+<!-- //LAYER POPUP : 생일 특별 상품 20190408 -->
+<!-- LAYER POPUP : 생일 축하 보상 20190408 -->
+<div class="layer-popup birthday-reward">
+    <div class="content">
+        <div class="header">
+            <h4 class="title"><a href="#none">EA SPORTS FC ONLINE - WEB SHOP</a></h4>
+            <button type="button" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-close">닫기</button>
+        </div>
+        <div class="middle">
+            <!-- 생일 축하 보상 -->
+            <div class="reward">
+                <h6>생일 축하 보상</h6>
+                <p>구단주님의 생일을 축하합니다.</p>
+                <div class="item">
+                    <img src="https://ssl.nexon.com/s2/game/fc/online/shop/item/30164.png" alt="TOP CLASS [7일]" />
+                    <p>TOP CLASS [7일]</p>
+                </div>
+                <p class="advice">보상 아이템은 게임 내 [아이템] > [보관함]으로 지급되며,<br />최대 30분까지 지급이 지연될 수 있습니다.</p>
+                <div class="button">
+                    <a href="#none" class="bt-confirm" onclick="shopui.fn.layerPopup('close'); return false;">확인</a>
+                </div>
+            </div><!-- //생일 축하 보상 -->
+        </div>
+    </div>
+    <div class="dimmed"></div>
+</div>
+<!-- //LAYER POPUP : 생일 축하 보상 20190408 -->
+<!-- 공통 LAYER POPUP : 스페셜 상점 - 결재 재화 정보 -->
+<div class="layer-popup special-shop-pay">
+</div>
+<!-- //공통 LAYER POPUP : 스페셜 상점 - 결재 재화 정보 -->
+<div class="layer-popup payment">
+    <div class="content">
+        <div class="header">
+            <h4 class="title">결제 진행 중</h4>
+        </div>
+        <div class="middle">
+            <div class="loader">
+                <span class="point _01"></span>
+                <span class="point _02"></span>
+                <span class="point _03"></span>
+                <span class="point _04"></span>
+                <span class="point _05"></span>
+                <span class="point _06"></span>
+                <span class="point _07"></span>
+                <span class="point _08"></span>
+            </div>
+            <p class="text">결제 진행 중 입니다.<br />잠시만 기다려주세요.</p>
+        </div>
+
+    </div>
+    <div class="background"></div>
+</div>
+<!-- //공통 LAYER POPUP : 소지금액 부족 표시 정보-->
+<div class="layer-popup charge">
+    <div class="content">
+        <div class="header">
+            <h4 class="title">구매하기</h4>
+            <button type="button" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-close">닫기</button>
+        </div>
+        <div class="middle">
+            <p class="product">
+                소지하신 금액이 부족합니다.
+            </p>
+            <!-- FC -->
+            <div class="button shop-no-price-fc" style="display:none;">
+                <a href="#none" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-shopping">확인</a>
+                <a href="https://shop.fconline.nexon.com/Shop/FcList" class="bt-basket">FC 구매하기</a>
+            </div>
+
+            <!-- 넥슨캐시 -->
+            <div class="button shop-no-price-cash" style="display:none;">
+                <a href="#none" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-shopping">확인</a>
+                <a href="#" onclick="GetCashChargePop(); return false;" class="bt-basket">넥슨캐시 충전하기</a>
+            </div>
+
+            <!-- 그 외 -->
+            <div class="button shop-no-price" style="display:none;">
+                <a href="#none" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-shopping">확인</a>
+            </div>
+        </div>
+    </div>
+    <div class="dimmed"></div>
+</div>
+
+<!-- //공통 LAYER POPUP : 웹상점 전체 공통 알림 팝업-->
+<div class="layer-popup common-message">
+    <div class="content">
+        <div class="header">
+            <h4 class="title"></h4>
+            <button type="button" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-close">닫기</button>
+        </div>
+        <div class="middle">
+            <p class="product">
+            </p>
+            <div class="button">
+                <a href="#none" onclick="shopui.fn.layerPopup('close');" class="bt-confirm">확인</a>
+            </div>
+        </div>
+    </div>
+    <div class="dimmed"></div>
+</div>
+<script>
+    function openMessage(title, message) {
+        if (title == "") title = "WEB SHOP";
+
+        var $obj = $(".layer-popup.common-message");
+        $obj.find(".title").text(title);
+        $obj.find(".product").html(message);
+
+        shopui.fn.layerPopup("common-message");
+    }
+</script>
+<style>
+    .layer-popup.common-message .content {
+        width: 600px;
+    }
+
+        .layer-popup.common-message .content .middle {
+            padding: 28px;
+        }
+
+            .layer-popup.common-message .content .middle .product {
+                line-height: 1.5;
+                color: #333;
+                text-align: center;
+                word-break: keep-all;
+            }
+
+                .layer-popup.common-message .content .middle .product strong {
+                    line-height: 1.5;
+                    text-align: center;
+                    word-break: keep-all;
+                }
+</style>
+
+<div class="layer-popup alarm common-confirm">
+    <div class="content">
+        <div class="header">
+            <h4 class="title"><a href="#none">EA SPORTS FC ONLINE - WEB SHOP</a></h4>
+            <button type="button" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-close">닫기</button>
+        </div>
+        <div class="middle">
+            <!-- text-body 기준으로 넣어 주세요~ -->
+            <div class="text-body">
+            </div>
+          
+            <div class="button">
+                <button type="button" onclick="shopui.fn.layerPopup('close'); return false;" class="bt-confirm">확인</button>
+            </div>
+        </div>
+        <div class="todayChk" id="todayChk"><button type="button">오늘 하루 보지 않기</button></div>
+    </div>
+    <div class="dimmed"></div>
+</div>
+
+
+
+
+
+
+
+        <!-- //공통 LAYER POPUP d-->
+
+    </div>
+    <!-- WEBLOG -->
+    <script>
+        $f.weblog({
+            url: window.location.origin + window.location.pathname,
+            service: "SHOP",
+            title: "WEBSHOP",
+            date: "2018"
+        });
+    </script>
+    <!-- //WEBLOG -->
+
+    <script type="text/javascript">
+
+            $(document).ready(function () {
+                $.ajaxSetup({ cache: false });
+                $.ajax({
+                    url: "https://shop.fconline.nexon.com/ShopApi/MembershipInfo?callback=?",
+                    dataType: "jsonp",
+                    success: function (res) {
+                        if (res.n4RtnCode == 0) {
+
+                            $("#membership_grade").attr("class", "membership " + $.parseJSON(res.MembershipInfo).GradeTextEng);
+                            $("#membership_grade2").attr("class", "membership " + $.parseJSON(res.MembershipInfo).GradeTextEng);  //간략 네비
+
+                            $("#membership_user").addClass($.parseJSON(res.MembershipInfo).GradeTextEng);
+                            $("#membership_user_fixed").addClass($.parseJSON(res.MembershipInfo).GradeTextEng);
+
+                        }
+                        else if (res.n4RtnCode == -98) {
+                            $("#membership_grade").attr("class", "membership check");
+                            $("#membership_grade2").attr("class", "membership check");
+                        }
+                    },
+                    error: function () {
+                    }
+                });
+            });
+
+            function fnSetComma(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+    </script>
+
+
+
 </body>
 </html>
+<script type="text/javascript" src="/js/common.js?dt=2025-05-24 12:27" charset="utf-8"></script>
+
+	<script src="https://ssl.nexon.com/s1/fc/online/event/250430_special_e0971sj7i27/app.js?t=202505241227"></script>
 
